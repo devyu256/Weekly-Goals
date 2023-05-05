@@ -18,9 +18,12 @@
 		6E265A442A04905600AA5176 /* CardVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E265A432A04905600AA5176 /* CardVIew.swift */; };
 		6E265A462A04906800AA5176 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E265A452A04906700AA5176 /* SheetView.swift */; };
 		6E265A482A04907C00AA5176 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E265A472A04907C00AA5176 /* Model.swift */; };
+		6E265A4B2A04E0AC00AA5176 /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E265A4A2A04E0AC00AA5176 /* AdmobBannerView.swift */; };
+		9AE1CBE516D85FC4DD3AB3B0 /* Pods_Weekly_Goals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CF9E26061C2B6D69BF45E0 /* Pods_Weekly_Goals.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10ADD26E7735FB7FE0E6DAA8 /* Pods-Weekly Goals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weekly Goals.release.xcconfig"; path = "Target Support Files/Pods-Weekly Goals/Pods-Weekly Goals.release.xcconfig"; sourceTree = "<group>"; };
 		6E265A262A03B6AD00AA5176 /* Weekly Goals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weekly Goals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E265A292A03B6AD00AA5176 /* Weekly_GoalsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekly_GoalsApp.swift; sourceTree = "<group>"; };
 		6E265A2B2A03B6AD00AA5176 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +36,10 @@
 		6E265A432A04905600AA5176 /* CardVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVIew.swift; sourceTree = "<group>"; };
 		6E265A452A04906700AA5176 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		6E265A472A04907C00AA5176 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		6E265A492A04E02C00AA5176 /* Weekly-Goals-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Weekly-Goals-Info.plist"; sourceTree = SOURCE_ROOT; };
+		6E265A4A2A04E0AC00AA5176 /* AdmobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerView.swift; sourceTree = "<group>"; };
+		83CF9E26061C2B6D69BF45E0 /* Pods_Weekly_Goals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weekly_Goals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BBBCA07244B94A3D885569F /* Pods-Weekly Goals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weekly Goals.debug.xcconfig"; path = "Target Support Files/Pods-Weekly Goals/Pods-Weekly Goals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,17 +47,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AE1CBE516D85FC4DD3AB3B0 /* Pods_Weekly_Goals.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22D30F343EB6C83DA380A59F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83CF9E26061C2B6D69BF45E0 /* Pods_Weekly_Goals.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6E265A1D2A03B6AD00AA5176 = {
 			isa = PBXGroup;
 			children = (
 				6E265A282A03B6AD00AA5176 /* Weekly Goals */,
 				6E265A272A03B6AD00AA5176 /* Products */,
+				E8629B19E75105DB3B511A8F /* Pods */,
+				22D30F343EB6C83DA380A59F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +83,7 @@
 		6E265A282A03B6AD00AA5176 /* Weekly Goals */ = {
 			isa = PBXGroup;
 			children = (
+				6E265A492A04E02C00AA5176 /* Weekly-Goals-Info.plist */,
 				6E265A292A03B6AD00AA5176 /* Weekly_GoalsApp.swift */,
 				6E265A412A048FE300AA5176 /* View */,
 				6E265A422A048FF500AA5176 /* Model */,
@@ -100,6 +119,7 @@
 				6E265A2B2A03B6AD00AA5176 /* ContentView.swift */,
 				6E265A432A04905600AA5176 /* CardVIew.swift */,
 				6E265A452A04906700AA5176 /* SheetView.swift */,
+				6E265A4A2A04E0AC00AA5176 /* AdmobBannerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -112,6 +132,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E8629B19E75105DB3B511A8F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9BBBCA07244B94A3D885569F /* Pods-Weekly Goals.debug.xcconfig */,
+				10ADD26E7735FB7FE0E6DAA8 /* Pods-Weekly Goals.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +148,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E265A392A03B6AE00AA5176 /* Build configuration list for PBXNativeTarget "Weekly Goals" */;
 			buildPhases = (
+				6FB811CB2439481E4056305A /* [CP] Check Pods Manifest.lock */,
 				6E265A222A03B6AD00AA5176 /* Sources */,
 				6E265A232A03B6AD00AA5176 /* Frameworks */,
 				6E265A242A03B6AD00AA5176 /* Resources */,
+				B5A597520AC292AA882591DF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,11 +208,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6FB811CB2439481E4056305A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Weekly Goals-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5A597520AC292AA882591DF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Weekly Goals/Pods-Weekly Goals-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Weekly Goals/Pods-Weekly Goals-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Weekly Goals/Pods-Weekly Goals-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6E265A222A03B6AD00AA5176 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E265A4B2A04E0AC00AA5176 /* AdmobBannerView.swift in Sources */,
 				6E265A482A04907C00AA5176 /* Model.swift in Sources */,
 				6E265A332A03B6AE00AA5176 /* Persistence.swift in Sources */,
 				6E265A3E2A04848900AA5176 /* Card+CoreDataClass.swift in Sources */,
@@ -313,6 +387,7 @@
 		};
 		6E265A3A2A03B6AE00AA5176 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BBBCA07244B94A3D885569F /* Pods-Weekly Goals.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -322,6 +397,7 @@
 				DEVELOPMENT_TEAM = HL4876W82F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Weekly-Goals-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -342,6 +418,7 @@
 		};
 		6E265A3B2A03B6AE00AA5176 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10ADD26E7735FB7FE0E6DAA8 /* Pods-Weekly Goals.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -351,6 +428,7 @@
 				DEVELOPMENT_TEAM = HL4876W82F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Weekly-Goals-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

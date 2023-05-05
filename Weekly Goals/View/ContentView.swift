@@ -7,6 +7,22 @@
 
 import SwiftUI
 import CoreData
+import GoogleMobileAds
+
+struct AdmobBannerViewController : UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> some UIViewController {
+        let view = GADBannerView(adSize: kGADAdSizeBanner)
+        let viewController = UIViewController()
+        view.adUnitID = "ca-app-pub-3228702018641843/2113275759"
+        view.rootViewController = viewController
+        view.load(GADRequest())
+        viewController.view.addSubview(view)
+        viewController.view.frame = CGRect(origin: .zero, size: kGADAdSizeBanner.size)
+        return viewController
+    }
+    
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
+}
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -37,6 +53,7 @@ struct ContentView: View {
                     CardView(model: model, cards: cards)
                 }
             }
+            AdmobBannerView()
         }
         
     }
