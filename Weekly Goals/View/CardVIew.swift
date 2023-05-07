@@ -170,7 +170,7 @@ struct CardView: View {
             maxHeight: UIScreen.main.bounds.size.height * 0.8
         )
         .background(RoundedRectangle(cornerRadius: 15)
-            .fill(Color(.gray)))
+            .fill(Color(.black)))
         //カード長押しで編集と削除のボタンを表示
         .contextMenu{
             Button(action: {
