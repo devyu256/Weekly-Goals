@@ -31,14 +31,16 @@ struct ContentView: View {
         //        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         //        animation: .default)
         //    private var items: FetchedResults<Item>
-        entity:Card.entity(),sortDescriptors: [NSSortDescriptor(keyPath: \Card.date, ascending: false)],
+        entity:Card.entity(),sortDescriptors: [NSSortDescriptor(keyPath: \Card.serial, ascending: true)],
         animation: .default)
     private var cards: FetchedResults<Card>
     var body: some View {
         VStack{
             //新規作成ボタン
             Button(action:
-                    {model.isNewData.toggle()
+                    {
+                model.isNewData.toggle()
+                model.serial = Int(cards.last?.serial ?? 0) + 1
             }){
                 Text("New item").foregroundColor(Color.blue)
             }
@@ -52,11 +54,32 @@ struct ContentView: View {
                 ForEach(cards){cards in
                     CardView(model: model, cards: cards)
                 }
+                .onMove(perform: move)
             }
-            AdmobBannerView()
+            .environment(\.editMode, .constant(.active))
         }
         
     }
+    private func move(from source: IndexSet, to destination: Int) {
+            //下から上に並べ替え時の挙動
+            if source.first! > destination {
+                cards[source.first!].serial = cards[destination].serial - 1
+                for i in destination...cards.count - 1 {
+                    cards[i].serial = cards[i].serial + 1
+                }
+            }
+            //上から下に並べ替え時の挙動
+            if source.first! < destination {
+                cards[source.first!].serial = cards[destination - 1].serial + 1
+                for i in 0...destination - 1 {
+                    cards[i].serial = cards[i].serial - 1
+                }
+            }
+          saveData()
+        }
+        private func saveData() {
+            try? self.viewContext.save()
+        }
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

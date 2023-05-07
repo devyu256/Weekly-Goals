@@ -25,6 +25,7 @@ extension Card {
     @NSManaged public var regDate: String?
     @NSManaged public var goal: Int16
     @NSManaged public var date: Date?
+    @NSManaged public var serial: Int16
 
 }
 
@@ -39,6 +40,7 @@ extension Card {
     public var wrappedRegDate: String {regDate ?? ""}
     public var wrappedGoal: Int16 {goal}
     public var wrappedDate: Date {date ?? Date()}
+    public var wrappedSerial: Int16 {serial}
 }
 
 extension Card : Identifiable {

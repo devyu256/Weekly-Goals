@@ -164,13 +164,13 @@ struct CardView: View {
 //            Text("regDate - \(cards.wrappedRegDate)").foregroundColor(Color.white)
         }
         .frame(
-            minWidth:UIScreen.main.bounds.size.width * 0.9,
-            maxWidth: UIScreen.main.bounds.size.width * 0.9,
-            minHeight:UIScreen.main.bounds.size.height * 0.15,
+            minWidth:UIScreen.main.bounds.size.width * 0.7,
+            maxWidth: UIScreen.main.bounds.size.width * 0.7,
+            minHeight:UIScreen.main.bounds.size.height * 0.1,
             maxHeight: UIScreen.main.bounds.size.height * 0.8
         )
         .background(RoundedRectangle(cornerRadius: 15)
-            .fill(Color(.black)))
+            .fill(Color(.gray)))
         //カード長押しで編集と削除のボタンを表示
         .contextMenu{
             Button(action: {
@@ -181,6 +181,7 @@ struct CardView: View {
                 }
             Button(action: {
                 context.delete(cards)
+                
                 try! context.save()}){
                     Text("Delete")
                     Image(systemName: "trash")
