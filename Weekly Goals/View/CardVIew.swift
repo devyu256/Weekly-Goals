@@ -19,18 +19,20 @@ struct CardView: View {
     
     func startFunc() -> Void {
         
-//        print("start")
-//        print(cards.regDate)
-//        print(cards.regYear)
-//        print(cards.regWeek)
-//        print(cards.days)
-//        print(cards.weeks)
-//
-//        cards.regDate = "2023/04/29"
+        //        print("start")
+        //        print(cards.regDate)
+        //        print(cards.regYear)
+        //        print(cards.regWeek)
+        //        print(cards.days)
+        //        print(cards.weeks)
+        //
+//        cards.regDate = "2023/05/05"
 //        cards.regYear = 2023
-//        cards.regWeek = 17
-//        cards.days = 3
-//        cards.weeks = 1
+//        cards.regWeek = 18
+//        cards.days = 2
+//        cards.weeks = 0
+//        cards.goal = 2
+//        cards.fromDate = "2023/05/05"
         
         var calendar = Calendar(identifier: .gregorian)
         var lastYearWeekNumber = 0
@@ -42,7 +44,7 @@ struct CardView: View {
         df.locale = Locale(identifier: "ja_JP")
         df.timeZone = TimeZone(identifier: "Asia/Tokyo")
         let day = df.string(from: today)
-
+        
         //本日の年、月、日
         let arr:[String] = day.components(separatedBy: "/")
         let component = DateComponents(year: Int(arr[0]), month: Int(arr[1]), day: Int(arr[2]))
@@ -62,22 +64,25 @@ struct CardView: View {
             //前年度である場合
             if cards.regYear == lastYear {
                 if cards.regWeek == lastYearWeekNumber {
-                    if cards.days >= 2 {
+                    if cards.days >= cards.goal {
                         cards.weeks += 1
                         cards.days = 0
                     } else {
                         cards.weeks = 0
                         cards.days = 0
+                        cards.fromDate = ""
                     }
                 } else {
                     cards.weeks = 0
                     cards.days = 0
+                    cards.fromDate = ""
                 }
             } else if cards.regYear == Int16(arr[0]){
                 return
             } else {
                 cards.weeks = 0
                 cards.days = 0
+                cards.fromDate = ""
             }
         } else {
             if cards.regYear == Int16(arr[0]) {
@@ -96,16 +101,19 @@ struct CardView: View {
                         } else {
                             cards.weeks = 0
                             cards.days = 0
+                            cards.fromDate = ""
                         }
                     } else {
                         cards.weeks = 0
                         cards.days = 0
+                        cards.fromDate = ""
                     }
                 }
                 //別年
             } else {
                 cards.weeks = 0
                 cards.days = 0
+                cards.fromDate = ""
             }
         }
         model.editItem(item: cards)
@@ -120,8 +128,12 @@ struct CardView: View {
                 Spacer()
                 Text(cards.wrappedTitle).foregroundColor(Color.white)
                 Spacer()
-                Text("Goal - \(cards.wrappedGoal)").foregroundColor(Color.white)
+                Text("Goal - \(cards.wrappedGoal)").foregroundColor(Color.gray)
                 Spacer()
+            }
+            HStack {
+                Spacer()
+                Text("Continued from \(cards.wrappedFromDate)").foregroundColor(Color.gray)
             }
             HStack{
                 Spacer()
@@ -149,6 +161,9 @@ struct CardView: View {
                         cards.regWeek = Int16(todayWeekNumber)
                         model.editItem(item: cards)
                         model.writeData(context: context)
+                        if cards.days == 1 && cards.weeks == 0 {
+                            cards.fromDate = day
+                        }
                     }
                 }, label:{ Text("")
                     //                        .font(.system(size: 10, weight: .black, design: .default))
@@ -159,9 +174,9 @@ struct CardView: View {
                 Spacer()
             }
             //以下、テスト用
-//            Text("regYear - \(cards.wrappedRegYear)").foregroundColor(Color.white)
-//            Text("regWeek - \(cards.wrappedRegWeek)").foregroundColor(Color.white)
-//            Text("regDate - \(cards.wrappedRegDate)").foregroundColor(Color.white)
+            //            Text("regYear - \(cards.wrappedRegYear)").foregroundColor(Color.white)
+            //            Text("regWeek - \(cards.wrappedRegWeek)").foregroundColor(Color.white)
+            //            Text("regDate - \(cards.wrappedRegDate)").foregroundColor(Color.white)
         }
         .frame(
             minWidth:UIScreen.main.bounds.size.width * 0.7,

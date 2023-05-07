@@ -26,7 +26,7 @@ extension Card {
     @NSManaged public var goal: Int16
     @NSManaged public var date: Date?
     @NSManaged public var serial: Int16
-
+    @NSManaged public var fromDate: String?
 }
 
 //nilの場合の処理を追加
@@ -41,6 +41,7 @@ extension Card {
     public var wrappedGoal: Int16 {goal}
     public var wrappedDate: Date {date ?? Date()}
     public var wrappedSerial: Int16 {serial}
+    public var wrappedFromDate: String {fromDate ?? ""}
 }
 
 extension Card : Identifiable {

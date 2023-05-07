@@ -29,6 +29,7 @@ struct PersistenceController {
         newCard.goal = 0
         newCard.date = Date()
         newCard.serial = 0
+        newCard.fromDate = ""
         
         do {
             try viewContext.save()

@@ -21,6 +21,7 @@ class Model : ObservableObject {
     @Published var goal = 0
     @Published var date = Date()
     @Published var serial = 0
+    @Published var fromDate = ""
     
     @Published var isNewData = false
     @Published var updateItem : Card!
@@ -39,6 +40,7 @@ class Model : ObservableObject {
             updateItem.regDate = regDate
             updateItem.goal = Int16(goal)
             updateItem.serial = Int16(serial)
+            updateItem.fromDate = fromDate
             
             try! context.save()
             
@@ -53,6 +55,8 @@ class Model : ObservableObject {
             regDate = ""
             goal = 0
             serial = 0
+            fromDate = ""
+
             return
         }
         //新規作成
@@ -68,6 +72,7 @@ class Model : ObservableObject {
         newCard.goal = Int16(goal)
         newCard.date = Date()
         newCard.serial = Int16(serial)
+        newCard.fromDate = fromDate
         
         do{
             try context.save()
@@ -83,6 +88,7 @@ class Model : ObservableObject {
             goal = 0
             date = Date()
             serial = 0
+            fromDate = ""
             
         }catch {
             print(error.localizedDescription)
@@ -101,6 +107,7 @@ class Model : ObservableObject {
         regDate = item.wrappedRegDate
         goal = Int(item.wrappedGoal)
         serial = Int(item.wrappedSerial)
+        fromDate = item.wrappedFromDate
         
         isNewData.toggle()
         
