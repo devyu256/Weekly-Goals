@@ -159,11 +159,11 @@ struct CardView: View {
                         cards.regDate = day
                         cards.regYear = Int16(Int(arr[0]) ?? 9999)
                         cards.regWeek = Int16(todayWeekNumber)
-                        model.editItem(item: cards)
-                        model.writeData(context: context)
                         if cards.days == 1 && cards.weeks == 0 {
                             cards.fromDate = day
                         }
+                        model.editItem(item: cards)
+                        model.writeData(context: context)
                     }
                 }, label:{ Text("")
                     //                        .font(.system(size: 10, weight: .black, design: .default))

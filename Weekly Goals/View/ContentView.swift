@@ -58,6 +58,7 @@ struct ContentView: View {
             }
             .environment(\.editMode, .constant(.active))
         }
+        AdmobBannerView()
         
     }
     private func move(from source: IndexSet, to destination: Int) {
