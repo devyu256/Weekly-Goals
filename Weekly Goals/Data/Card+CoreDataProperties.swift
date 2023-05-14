@@ -27,6 +27,8 @@ extension Card {
     @NSManaged public var date: Date?
     @NSManaged public var serial: Int16
     @NSManaged public var fromDate: String?
+    @NSManaged public var resetYear: Int16
+    @NSManaged public var resetWeek: Int16
 }
 
 //nilの場合の処理を追加
@@ -42,6 +44,8 @@ extension Card {
     public var wrappedDate: Date {date ?? Date()}
     public var wrappedSerial: Int16 {serial}
     public var wrappedFromDate: String {fromDate ?? ""}
+    public var wrappedResetYear: Int16 {resetYear}
+    public var wrappedResetWeek: Int16 {resetWeek}
 }
 
 extension Card : Identifiable {

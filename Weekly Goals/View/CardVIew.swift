@@ -26,13 +26,13 @@ struct CardView: View {
         //        print(cards.days)
         //        print(cards.weeks)
         //
-//        cards.regDate = "2023/05/05"
-//        cards.regYear = 2023
-//        cards.regWeek = 18
-//        cards.days = 2
-//        cards.weeks = 0
-//        cards.goal = 2
-//        cards.fromDate = "2023/05/05"
+        //        cards.regDate = "2023/05/05"
+        //        cards.regYear = 2023
+        //        cards.regWeek = 18
+        //        cards.days = 2
+        //        cards.weeks = 0
+        //        cards.goal = 2
+        //        cards.fromDate = "2023/05/05"
         
         var calendar = Calendar(identifier: .gregorian)
         var lastYearWeekNumber = 0
@@ -51,6 +51,15 @@ struct CardView: View {
         let date = Calendar.current.date(from: component)
         //本日の週数
         todayWeekNumber = calendar.component(.weekOfYear, from: date!)
+        
+        //リセット年、リセット週数が本日の年、週数と同じであれば何もしない
+        if(cards.resetYear == (Int(arr[0])  ?? 9999) && cards.resetWeek == todayWeekNumber){
+            return
+        }
+        
+        cards.resetYear = Int16(Int(arr[0]) ?? 9999)
+        cards.resetWeek = Int16(todayWeekNumber)
+        
         //前年の12月31日の週数を計算
         //前年度
         let lastYear = (Int(arr[0]) ?? 9999) - 1
@@ -86,7 +95,7 @@ struct CardView: View {
             }
         } else {
             if cards.regYear == Int16(arr[0]) {
-                //同年、同週の場合、何もしない
+                //同年、同週の場合何もしない
                 if cards.regWeek == todayWeekNumber {
                     return
                     //同年、別週

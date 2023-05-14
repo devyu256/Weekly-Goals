@@ -22,6 +22,8 @@ class Model : ObservableObject {
     @Published var date = Date()
     @Published var serial = 0
     @Published var fromDate = ""
+    @Published var resetYear = 0
+    @Published var resetWeek = 0
     
     @Published var isNewData = false
     @Published var updateItem : Card!
@@ -41,6 +43,8 @@ class Model : ObservableObject {
             updateItem.goal = Int16(goal)
             updateItem.serial = Int16(serial)
             updateItem.fromDate = fromDate
+            updateItem.resetYear = Int16(resetYear)
+            updateItem.resetWeek = Int16(resetWeek)
             
             try! context.save()
             
@@ -56,6 +60,8 @@ class Model : ObservableObject {
             goal = 0
             serial = 0
             fromDate = ""
+            resetYear = 0
+            resetWeek = 0
 
             return
         }
@@ -73,6 +79,8 @@ class Model : ObservableObject {
         newCard.date = Date()
         newCard.serial = Int16(serial)
         newCard.fromDate = fromDate
+        newCard.resetYear = Int16(resetYear)
+        newCard.resetWeek = Int16(resetWeek)
         
         do{
             try context.save()
@@ -89,6 +97,8 @@ class Model : ObservableObject {
             date = Date()
             serial = 0
             fromDate = ""
+            resetYear = 0
+            resetWeek = 0
             
         }catch {
             print(error.localizedDescription)
@@ -108,6 +118,8 @@ class Model : ObservableObject {
         goal = Int(item.wrappedGoal)
         serial = Int(item.wrappedSerial)
         fromDate = item.wrappedFromDate
+        resetYear = Int(item.wrappedResetYear)
+        resetWeek = Int(item.wrappedResetWeek)
         
         isNewData.toggle()
         
